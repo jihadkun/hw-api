@@ -1,10 +1,10 @@
 import Sequelize from 'sequelize';
 
 
-const sequelize = new Sequelize('toko', 'root', '', {
-      host: 'localhost',
-      dialect: 'mysql'
-    });
+const sequelize = new Sequelize('toko', 'root', 'alchemist23', {
+  host: 'localhost',
+  dialect: 'mysql'
+});
 
 const Model = Sequelize.Model;
 class User extends Model {}
@@ -22,9 +22,13 @@ User.init({
   address: {
     type: Sequelize.STRING
   }
-},{
+}, {
   sequelize,
 });
-sequelize.sync({alter: true})
+sequelize.sync({
+  alter: true
+})
 
-export { User }
+export {
+  User
+}

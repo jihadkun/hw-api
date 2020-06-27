@@ -2,7 +2,8 @@ import express from 'express';
 import Sequelize from 'sequelize';
 import bodyParser from 'body-parser';
 
-import user from './src/routes/users'
+import user from './src/routes/users';
+import product from './src/routes/product';
 
 const app = express();
 const port = 2000;
@@ -10,15 +11,15 @@ const port = 2000;
 app.use(bodyParser.json());
 
 
-  //config database
+//config database
 // const sequelize = new Sequelize('toko', 'root', '', {
 //     host: 'localhost',
 //     dialect: 'mysql'
 //   });
 
-  
-user(app);
 
+user(app);
+product(app);
 
 
 
